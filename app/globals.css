@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+html, 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: black;
+}
+
+/* home */
+.main-intro {
+  background: url('../public/destiny_bg.avif');
+  background-position: center;
+  background-size: 100%;
+  transition: 3s ease all;
+  /* animation: intro-bg 10s ease infinite forwards; */
+}
+
+.hovered {
+  background-size: 120%;
+  background-position: top 10% right 10%;
+}
+
+@keyframes intro-bg {
+  0% {
+    background-size: 100%;
+    background-position: top 90% right 90%;
+  }
+
+  50% {
+    background-size: 120%;
+    background-position: top 10% right 10%;
+  }
+
+  100% {
+    background-size: 100%;
+    background-position: top 90% right 90%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
